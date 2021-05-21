@@ -1,0 +1,104 @@
+
+<html>
+<head><style>
+        input.largerCheckbox {
+            width: 40px;
+            height: 40px;
+
+}
+        input.largerButton {
+            width: 300px;
+            height: 30px;
+        }
+    </style>
+ </head>
+<title>Register</title>
+<script>
+function validateform(){
+var reg=document.myform.reg.value;
+var name=document.myform.name.value;
+var password1=document.myform.password1.value;
+var password2=document.myform.password2.value;
+var no1=document.myform.no1.value;
+var check1=document.myform.check1.value;
+var sk=document.myform.sk.value;
+if (reg==null || reg.length!=12){
+  alert("Provide Valid Register Number");
+  return false;
+  }
+if (name==null || name==""){
+  alert("Name can't be blank");
+  return false;
+}
+if(password1.length<6){
+ alert("Password must be at least 6 characters long.");
+ return false;
+ }
+if(password1!=password2)
+{
+     alert("Password Mismatching");
+     return false;
+}
+if(no1 % 9 !=0 && no1 % 5 !=0 ){
+  alert("Give correct Values");
+  return false;
+  }
+if(sk=="")
+ {
+  alert("Robot should not be Empty ");
+  return false;
+  }
+ if(sk!=password2)
+   {
+    alert("Enter Valid Secret Key")
+    return false;
+    }
+ return(true);
+}
+</script>
+<body>
+<body style="background-color:00f1ef"></body>
+<center><marquee><img src='static/images/center.jpeg'>
+    <img src='static/images/u1.jpeg'>
+    <img src='static/images/u2.jpeg'><img src='static/images/u3.jpeg'>
+    <img src='static/images/center.jpeg'><img src='static/images/u4.jpeg'>
+    <img src='static/images/u5.jpeg'><img src='static/images/u6.jpeg'></marquee>
+</center>
+<center>
+    <h1 style="color:Blue">University E-Certificates Portal</h1>
+    <h1 style="color:Brown">Registration</h1>
+<form name="myf orm" method="post" action="static/plugins/login.html" onsubmit="return validateform()">
+    {% csrf_token %}
+    <table>
+    <tr><th><div><label for>Register Number:</label>
+        <td><input type="number" name="reg"></div><br/><br/></td></th></tr>
+    <tr><th><div><label for>Student Name:</label>
+       <td> <input type="text" name="name"></div><br/><br/></td></th></tr>
+<tr><th><div><label for>Password:</label>
+    <td><input type="password" name="password1"></div><br/><br/></td></th></tr>
+        <tr><th><div><label for>Confirm Password:</label>
+    <td><input type="password" name="password2"></div><br/><br/></td></th></tr>
+        <tr><th><div><label for>Email ID:</label>
+<td><input type="email" name="email1"></div><br/><br/></td></th></tr>
+<tr><th><div><label for>Mobile Number:</label>
+<td><input type="number" name="mobile1"></div><br/><br/></td></th></tr>
+    </table><br/><br/>
+</center>
+<table>
+    <tr><th>
+        <label for>Security Check_1:</label>
+  <td><p>Enter a Number divisible by 9 and 5</p></td></th> <!--take care of later-->
+    <th><td><input type="number" name="no1">
+        <input type="submit" value="Check" ></td></th>
+    <center><th><label for>I'm not Robot</label>
+<td><input type="checkbox" class="largerCheckbox"
+       name="check1" ></td></th></center>
+<th><label for>Secret Key</label>
+        <td> <input type="password" name="sk" </td></th></tr>
+</table>
+<center><input type="submit" class="largerButton"
+               name="submit" value="Register"></center>
+
+</form>
+</body>
+</html>
