@@ -2,8 +2,8 @@
 
 ## Hi,
 
-##   This is the project called Academic E-Certificate Verification System using Blockchain and Provide additional functional support for the transaction and 
-##   Uploadation.
+##   This is the project called Academic E-Certificate Verification System using Blockchain 
+##   I have Provided additional functional support for the Transaction and Uploadation.
 
 ##  GOAL: Achieve Distributed System using IPFS and maintain Log Consistency than the Previous Technique
 
